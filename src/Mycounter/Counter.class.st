@@ -2,7 +2,8 @@ Class {
 	#name : #Counter,
 	#superclass : #Object,
 	#instVars : [
-		'count'
+		'count',
+		'valInc'
 	],
 	#category : #Mycounter
 }
@@ -46,4 +47,16 @@ Counter >> printOn: aStream [
 super printOn: aStream.
 aStream nextPutAll:  ' Avec la valeur : ' , count printString.
 aStream cr 
+]
+
+{ #category : #accessing }
+Counter >> valInc [
+^ valInc
+]
+
+{ #category : #accessing }
+Counter >> valInc: anInteger [
+valInc := anInteger
+
+
 ]

@@ -37,7 +37,8 @@ self assert: c count equals: 8
 CounterTest >> testInitialize [
 |c|
 c := Counter new.
-self assert: c count equals: 0
+self assert: c count equals: 0.
+"self assert: c valInc equals: 0"
 ]
 
 { #category : #tests }
@@ -46,4 +47,11 @@ CounterTest >> testStartAt [
 |c|
 c := Counter startAt: 5.
 self assert: c count equals: 5
+]
+
+{ #category : #tests }
+CounterTest >> testValInc [
+|c|
+c := Counter new.
+self assert: c count equals: 0
 ]
