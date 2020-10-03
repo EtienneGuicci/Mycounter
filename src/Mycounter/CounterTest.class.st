@@ -20,7 +20,8 @@ CounterTest >> testDecrement [
 |c|
 c := Counter new.
 c count: 7.
-c decrement ; decrement.
+c valInc: 2.
+c decrement.
 self assert: c count equals: 5
 ]
 
@@ -29,8 +30,9 @@ CounterTest >> testIncrement [
 |c|
 c := Counter new.
 c count: 7.
+c valInc: 2.
 c increment.
-self assert: c count equals: 8
+self assert: c count equals: 9
 ]
 
 { #category : #tests }
@@ -38,7 +40,7 @@ CounterTest >> testInitialize [
 |c|
 c := Counter new.
 self assert: c count equals: 0.
-"self assert: c valInc equals: 0"
+self assert: c valInc equals: 1
 ]
 
 { #category : #tests }
@@ -53,5 +55,7 @@ self assert: c count equals: 5
 CounterTest >> testValInc [
 |c|
 c := Counter new.
-self assert: c count equals: 0
+c count: 7.
+c valInc: 2.
+self assert: c valInc equals: 2
 ]

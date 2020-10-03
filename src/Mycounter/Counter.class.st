@@ -27,18 +27,19 @@ count := anInteger
 
 { #category : #accessing }
 Counter >> decrement [ 
-count := count - 1.
+count := count - valInc .
 ]
 
 { #category : #accessing }
 Counter >> increment [ 
-count := count + 1.
+count := count + valInc .
 ]
 
 { #category : #accessing }
 Counter >> initialize [ 
 super initialize.
-count := 0
+count := 0.
+valInc := 1
 ]
 
 { #category : #accessing }
